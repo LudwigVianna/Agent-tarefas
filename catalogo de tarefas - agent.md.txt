@@ -1,0 +1,130 @@
+Catálogo de Tarefas – Aplicação VivoNow
+
+Objetivo Este documento descreve as tarefas operacionais utilizadas nos processos de
+implantação, deploy e rollback da aplicação VivoNow.
+
+CATALOGO DE TAREFAS DA FASE DE QA :
+Tarefa: RA - INIT
+
+DESCRIÇÃO RESUMIDA: [ 2101 ] - [QA - GESTAO DE AMBIENTES] Executar Release
+
+DESCRIÇÃO :
+
+APLICAR VIA PIPELINE: Deploy Ambiente QA
+
+LINK PIPELINE: https://dev.azure.com/telefonica-vivo-brasil/KNAN%20-
+%20KENAN/_build?definitionId=
+
+CÓDIGO DA RDM: CHGXXXXXXXX
+
+PACOTE: 1
+
+Ação: EXECUCAO NORMAL
+
+AMBIENTE: QAXX
+
+TIPO: Planejamento
+
+GRUPO DE ATRIBUIÇÃO: VIVO_QA-GESTAO-DE-AMBIENTES_TI-GOVERNANCA-ARQUIT-E-QA
+
+TAREFA ROLLBACK: RA – INIT
+DESCRIÇÃO RESUMIDA: [ 2301 ] - [QA - GESTAO DE AMBIENTES] Executar Release - Rollback
+
+DESCRIÇÃO :
+
+Obs.: Executar essa tarefa caso seja necessário realizar rollback da aplicação da TAS0000000.
+
+APLICAR SCRIPTS DE ROLLBACK DO PACOTE 1 DA CHGXXXX COM O USUÁRIO ESPECIFICADO
+ABAIXO NA BASE DE QA3:
+ARBOR:
+ARBORGVT_BILLING:
+ARBORGVT_JOURNALS:
+MASTERSAF:
+Tarefa: RA - INIT MANUAL DDL
+
+DESCRIÇÃO RESUMIDA: [2101] - [QA - GESTAO DE AMBIENTES] Executar Script DDL
+
+DESCRIÇÃO :
+
+Executar o script de DDL no link abaixo com o usuário [Ex.: ARBOR] nas bases [Ex.: PBCAT
+(svuxp1b12), PBCT1 (svuxp1b13) e PBCT2 (svuxp1b14)] do Kenan, ou equivalentes em QA:
+Cole aqui o link dos scripts do repositorio da azure
+
+TIPO: Planejamento
+
+GRUPO DE ATRIBUIÇÃO: VIVO_QA-GESTAO-DE-AMBIENTES_TI-GOVERNANCA-ARQUIT-E-QA
+
+TAREFA ROLLBACK: RA - INIT MANUAL DDL
+DESCRIÇÃO RESUMIDA: [23] - [QA - GESTAO DE AMBIENTES] Executar Script DDL - Rollback
+
+DESCRIÇÃO :
+
+Obs.: Executar essa tarefa caso seja necessário realizar rollback da aplicação da [Ex.:
+TAS0000000].
+
+Executar o script de DDL no link abaixo com o usuário [Ex.: ARBOR] nas bases [Ex.: PBCAT
+(svuxp1b12), PBCT1 (svuxp1b13) e PBCT2 (svuxp1b14)] do Kenan, ou equivalentes em QA:
+Cole aqui o link do rollback do repositorio na azure
+
+TIPO : Planejamento
+
+GRUPO DE ATRIBUIÇÃO : VIVO_QA-GESTAO-DE-AMBIENTES_TI-GOVERNANCA-ARQUIT-E-QA
+
+Tarefa: RA - INIT MANUAL DML
+
+DESCRIÇÃO RESUMIDA: [21 01 ] - [QA - GESTAO DE AMBIENTES] Executar Script DML
+
+DESCRIÇÃO :
+
+Executar o script de DML no link abaixo com o usuário [Ex.: ARBOR] nas bases [Ex.:
+PBCAT (svuxp1b12), PBCT1 (svuxp1b13) e PBCT2 (svuxp1b14)] do Kenan, ou
+equivalentes em QA
+(Colar aqui o link dos scripts na azure)
+TIPO: Planejamento
+
+GRUPO DE ATRIBUIÇÃO: VIVO_QA-GESTAO-DE-AMBIENTES_TI-GOVERNANCA-ARQUIT-E-QA
+
+TAREFA ROLLBACK: Executar Script DML
+
+DESCRIÇÃO RESUMIDA: [2301] - [QA - GESTAO DE AMBIENTES] Executar Script DML – Rollback
+
+DESCRIÇÃO :
+
+Obs.: Executar essa tarefa caso seja necessário realizar rollback da aplicação da [Ex.:
+TAS0000000].
+
+Executar o script de DML no link abaixo com o usuário [Ex.: ARBOR] nas bases [Ex.: PBCAT
+(svuxp1b12), PBCT1 (svuxp1b13) e PBCT2 (svuxp1b14)] do Kenan, ou equivalentes em QA:
+(Colar aqui o link dos scripts na azure)
+
+TIPO : Planejamento
+
+GRUPO DE ATRIBUIÇÃO : VIVO_QA-GESTAO-DE-AMBIENTES_TI-GOVERNANCA-ARQUIT-E-QA
+
+Tarefa: INIT MANUAL DCL
+
+DESCRIÇÃO RESUMIDA: [2101] - [QA - GESTAO DE AMBIENTES] Executar Script DCL
+
+DESCRIÇÃO :
+
+Executar o script de DCL no link abaixo com o usuário [Ex.: ARBOR] nas bases [Ex.: PBCAT
+(svuxp1b12), PBCT1 (svuxp1b13) e PBCT2 (svuxp1b14)] do Kenan, ou equivalentes em QA:
+(Colar aqui o link dos scripts na azure)
+TIPO : Planejamento
+
+GRUPO DE ATRIBUIÇÃO : VIVO_QA-GESTAO-DE-AMBIENTES_TI-GOVERNANCA-ARQUIT-E-QA
+Tarefa Rollback : - INIT MANUAL DCL
+
+DESCRIÇÃO RESUMIDA : [23 01 ] - [QA - GESTAO DE AMBIENTES] Executar Script DCL - Rollback
+
+DESCRIÇÃO :
+Obs.: Executar essa tarefa caso seja necessário realizar rollback da aplicação da [Ex.:
+TAS0000000].
+
+Executar o script de DDL no link abaixo com o usuário [Ex.: ARBOR] nas bases [Ex.: PBCAT
+(svuxp1b12), PBCT1 (svuxp1b13) e PBCT2 (svuxp1b14)] do Kenan, ou equivalentes em QA:
+(Colar aqui o link dos scripts na azure)
+
+TIPO : Planejamento
+
+GRUPO DE ATRIBUIÇÃO : VIVO_QA-GESTAO-DE-AMBIENTES_TI-GOVERNANCA-ARQUIT-E-QA
