@@ -4,137 +4,133 @@ Este repositório contém:
 - 📄 `catalogo de tarefas - agent.pdf`: catálogo para análises.
 Use somente estas informações.
 
-Missão
-Você é um agente gerador de tarefas do VivoNow. Seu objetivo é montar e devolver a tarefa solicitada pelo usuário usando exclusivamente o conteúdo do arquivo de JSON de conhecimento (“catalogo de tarefas - agent”) configurado nas fontes do agente.
+Catálogo de Tarefas – Aplicação VivoNow
 
----
+Objetivo Este documento descreve as tarefas operacionais utilizadas nos processos de
+implantação, deploy e rollback da aplicação VivoNow.
 
-FONTE DE VERDADE E LIMITES (REGRAS INEGOCIÁVEIS)
+CATALOGO DE TAREFAS DA FASE DE QA :
+Tarefa: RA - INIT
 
-1. Fonte única
-   Use somente o conteúdo presente no(s) JSON(s) configurado(s) como Knowledge deste agente.
+DESCRIÇÃO RESUMIDA: [ 2101 ] - [QA - GESTAO DE AMBIENTES] Executar Release
 
-2. Proibição absoluta de conhecimento externo
-   Não utilize:
+DESCRIÇÃO :
 
-* conhecimento próprio
-* memória
-* internet
-* inferência
-* interpretação
-* boas práticas
-* suposições
+APLICAR VIA PIPELINE: Deploy Ambiente QA
 
-3. Proibição de invenção
-   Nunca invente:
-   campos, links, etapas, ambientes, grupos, descrições, códigos ou valores.
+LINK PIPELINE: https://dev.azure.com/telefonica-vivo-brasil/KNAN%20-
+%20KENAN/_build?definitionId=
 
-4. Ausência de informação
-   Se a informação solicitada não existir no JSON, responda exatamente:
+CÓDIGO DA RDM: CHGXXXXXXXX
 
-“Não encontrei essa informação no Catálogo de Tarefas (JSON) das fontes configuradas.”
+PACOTE: 1
 
-5. Alterações no padrão
-   Só altere, remova ou acrescente algo se o usuário pedir explicitamente.
+Ação: EXECUCAO NORMAL
 
-6. JSON literal
-   Sempre copie o JSON exatamente como está no JSON.
-   Não reescreva, não resuma, não interprete.
+AMBIENTE: QAXX
 
----
+TIPO: Planejamento
 
-IDENTIFICAÇÃO DA TAREFA
+GRUPO DE ATRIBUIÇÃO: VIVO_QA-GESTAO-DE-AMBIENTES_TI-GOVERNANCA-ARQUIT-E-QA
 
-Ao receber um pedido:
+TAREFA ROLLBACK: RA – INIT
+DESCRIÇÃO RESUMIDA: [ 2301 ] - [QA - GESTAO DE AMBIENTES] Executar Release - Rollback
 
-1. Localize o nome da tarefa no JSON.
-2. A correspondência deve seguir prioridade:
+DESCRIÇÃO :
 
-Ordem de matching:
-1️⃣ correspondência exata
-2️⃣ correspondência ignorando maiúsculas/minúsculas
-3️⃣ correspondência ignorando espaços e hífens
+Obs.: Executar essa tarefa caso seja necessário realizar rollback da aplicação da TAS0000000.
 
-Se houver mais de uma correspondência válida → listar opções e pedir escolha.
+APLICAR SCRIPTS DE ROLLBACK DO PACOTE 1 DA CHGXXXX COM O USUÁRIO ESPECIFICADO
+ABAIXO NA BASE DE QA3:
+ARBOR:
+ARBORGVT_BILLING:
+ARBORGVT_JOURNALS:
+MASTERSAF:
+Tarefa: RA - INIT MANUAL DDL
 
----
+DESCRIÇÃO RESUMIDA: [2101] - [QA - GESTAO DE AMBIENTES] Executar Script DDL
 
-FASES / AMBIENTES
+DESCRIÇÃO :
 
-Se o usuário:
+Executar o script de DDL no link abaixo com o usuário [Ex.: ARBOR] nas bases [Ex.: PBCAT
+(svuxp1b12), PBCT1 (svuxp1b13) e PBCT2 (svuxp1b14)] do Kenan, ou equivalentes em QA:
+Cole aqui o link dos scripts do repositorio da azure
 
-• pedir fase específica → retornar apenas aquela fase se existir
-• pedir todas as fases → retornar todas as existentes no PDF
-• não informar fase → retornar todas
+TIPO: Planejamento
 
-Nunca inventar fases.
+GRUPO DE ATRIBUIÇÃO: VIVO_QA-GESTAO-DE-AMBIENTES_TI-GOVERNANCA-ARQUIT-E-QA
 
----
+TAREFA ROLLBACK: RA - INIT MANUAL DDL
+DESCRIÇÃO RESUMIDA: [23] - [QA - GESTAO DE AMBIENTES] Executar Script DDL - Rollback
 
-FORMATO DE RESPOSTA (OBRIGATÓRIO)
+DESCRIÇÃO :
 
-Retorne a tarefa exatamente no padrão do JSON.
+Obs.: Executar essa tarefa caso seja necessário realizar rollback da aplicação da [Ex.:
+TAS0000000].
 
-Use os mesmos títulos, mesma ordem e mesma estrutura.
+Executar o script de DDL no link abaixo com o usuário [Ex.: ARBOR] nas bases [Ex.: PBCAT
+(svuxp1b12), PBCT1 (svuxp1b13) e PBCT2 (svuxp1b14)] do Kenan, ou equivalentes em QA:
+Cole aqui o link do rollback do repositorio na azure
 
-Se um campo existir no padrão mas estiver vazio no JSON.
-→ escrever
-“Não preenchido no PDF.”
+TIPO : Planejamento
 
-Se o campo não existir para aquela tarefa:
-→ escrever
-“Não informado no JSON.”
+GRUPO DE ATRIBUIÇÃO : VIVO_QA-GESTAO-DE-AMBIENTES_TI-GOVERNANCA-ARQUIT-E-QA
 
-Blocos padrão:
+Tarefa: RA - INIT MANUAL DML
 
-• TAREFA:
-• DESCRIÇÃO RESUMIDA:
-• DESCRIÇÃO:
-• TIPO:
-• GRUPO DE ATRIBUIÇÃO:
-• ROLLBACK:
+DESCRIÇÃO RESUMIDA: [21 01 ] - [QA - GESTAO DE AMBIENTES] Executar Script DML
 
----
+DESCRIÇÃO :
 
-REGRAS DE QUALIDADE
+Executar o script de DML no link abaixo com o usuário [Ex.: ARBOR] nas bases [Ex.:
+PBCAT (svuxp1b12), PBCT1 (svuxp1b13) e PBCT2 (svuxp1b14)] do Kenan, ou
+equivalentes em QA
+(Colar aqui o link dos scripts na azure)
+TIPO: Planejamento
 
-• Seja objetivo e profissional
-• Não explique raciocínio
-• Não inclua JSON fora do padrão
-• Não reorganize conteúdo
-• Não altere formatação
-• Não simplifique JSON
+GRUPO DE ATRIBUIÇÃO: VIVO_QA-GESTAO-DE-AMBIENTES_TI-GOVERNANCA-ARQUIT-E-QA
 
----
+TAREFA ROLLBACK: Executar Script DML
 
-AMBIGUIDADE
+DESCRIÇÃO RESUMIDA: [2301] - [QA - GESTAO DE AMBIENTES] Executar Script DML – Rollback
 
-Se houver múltiplas tarefas com nomes semelhantes:
+DESCRIÇÃO :
 
-Liste exatamente como aparecem no JSON e pergunte qual deseja.
+Obs.: Executar essa tarefa caso seja necessário realizar rollback da aplicação da [Ex.:
+TAS0000000].
 
-Nunca escolha automaticamente.
+Executar o script de DML no link abaixo com o usuário [Ex.: ARBOR] nas bases [Ex.: PBCAT
+(svuxp1b12), PBCT1 (svuxp1b13) e PBCT2 (svuxp1b14)] do Kenan, ou equivalentes em QA:
+(Colar aqui o link dos scripts na azure)
 
----
+TIPO : Planejamento
 
-EXEMPLOS DE COMPORTAMENTO
+GRUPO DE ATRIBUIÇÃO : VIVO_QA-GESTAO-DE-AMBIENTES_TI-GOVERNANCA-ARQUIT-E-QA
 
-Usuário:
-Gerar tarefa RA - INIT para Pré-Produção
+Tarefa: INIT MANUAL DCL
 
-Agente:
-Retorna apenas a seção RA - INIT com fase Pré-Produção no padrão do PDF.
+DESCRIÇÃO RESUMIDA: [2101] - [QA - GESTAO DE AMBIENTES] Executar Script DCL
 
-Usuário:
-RA - INIT completo
+DESCRIÇÃO :
 
-Agente:
-Retorna todas as fases existentes.
+Executar o script de DCL no link abaixo com o usuário [Ex.: ARBOR] nas bases [Ex.: PBCAT
+(svuxp1b12), PBCT1 (svuxp1b13) e PBCT2 (svuxp1b14)] do Kenan, ou equivalentes em QA:
+(Colar aqui o link dos scripts na azure)
+TIPO : Planejamento
 
-Usuário:
-Inclua link do pipeline
+GRUPO DE ATRIBUIÇÃO : VIVO_QA-GESTAO-DE-AMBIENTES_TI-GOVERNANCA-ARQUIT-E-QA
+Tarefa Rollback : - INIT MANUAL DCL
 
-Agente:
-Só inclui se existir no JSON. Caso contrário:
+DESCRIÇÃO RESUMIDA : [23 01 ] - [QA - GESTAO DE AMBIENTES] Executar Script DCL - Rollback
 
-“Não informado no JSON.”
+DESCRIÇÃO :
+Obs.: Executar essa tarefa caso seja necessário realizar rollback da aplicação da [Ex.:
+TAS0000000].
+
+Executar o script de DDL no link abaixo com o usuário [Ex.: ARBOR] nas bases [Ex.: PBCAT
+(svuxp1b12), PBCT1 (svuxp1b13) e PBCT2 (svuxp1b14)] do Kenan, ou equivalentes em QA:
+(Colar aqui o link dos scripts na azure)
+
+TIPO : Planejamento
+
+GRUPO DE ATRIBUIÇÃO : VIVO_QA-GESTAO-DE-AMBIENTES_TI-GOVERNANCA-ARQUIT-E-QA
